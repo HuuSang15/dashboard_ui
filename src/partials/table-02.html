@@ -1,119 +1,171 @@
-<div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-  <div class="py-6 px-4 md:px-6 xl:px-7.5">
-    <h4 class="text-xl font-bold text-black dark:text-white">
-      Top Products
-    </h4>
-  </div>
-
-  <div
-    class="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-    <div class="col-span-3 flex items-center">
-      <p class="font-medium">Product Name</p>
+ <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+  <div class="justify-between gap-4 sm:flex">
+    <div class="py-8 px-4 md:px-6 xl:px-7.5 ">
+      <h4 class="text-xl font-bold text-black dark:text-white">
+        List Of Employee
+      </h4>
     </div>
-    <div class="col-span-2 hidden items-center sm:flex">
-      <p class="font-medium">Category</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium">Price</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium">Sold</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium">Profit</p>
-    </div>
-  </div>
-
-  <div
-    class="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-    <div class="col-span-3 flex items-center">
-      <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-        <div class="h-12.5 w-15 rounded-md">
-          <img src="./images/product/product-01.png" alt="Product" />
-        </div>
-        <p class="font-medium text-sm text-black dark:text-white">Apple Watch Series 7</p>
+    <div class="">
+      <div class="relative z-20 inline-block py-6 px-4 md:px-6 xl:px-7.5 ">
+         <button id="addEmployeeBtn" class="py-3 px-3 bg-primary text-white rounded font-bold">Add Employee</button>
       </div>
     </div>
-    <div class="col-span-2 hidden items-center sm:flex">
-      <p class="font-medium text-sm text-black dark:text-white">Electronics</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-black dark:text-white">$269</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-black dark:text-white">22</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-meta-3">$45</p>
-    </div>
   </div>
   <div
     class="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-    <div class="col-span-3 flex items-center">
-      <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-        <div class="h-12.5 w-15 rounded-md">
-          <img src="./images/product/product-02.png" alt="Product" />
-        </div>
-        <p class="font-medium text-sm text-black dark:text-white">Macbook Pro M1</p>
-      </div>
+    <div class="col-span-1 flex items-center">
+      <p class="font-medium">Employee ID</p>
     </div>
-    <div class="col-span-2 hidden items-center sm:flex">
-      <p class="font-medium text-sm text-black dark:text-white">Electronics</p>
+    <div class="col-span-2 flex items-center">
+      <p class="font-medium">Name</p>
+    </div>
+    <div class="col-span-1 items-center sm:flex">
+      <p class="font-medium">City</p>
+    </div>
+    <div class="col-span-1 hidden items-center sm:flex">
+      <p class="font-medium">Ethnicity</p>
     </div>
     <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-black dark:text-white">$546</p>
+      <p class="font-medium">State</p>
+    </div>
+    <div class="col-span-1 hidden items-center sm:flex">
+      <p class="font-medium">Phone</p>
     </div>
     <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-black dark:text-white">34</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-meta-3">$125</p>
+      <p class="font-medium">Benefit</p>
     </div>
   </div>
-  <div
-    class="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-    <div class="col-span-3 flex items-center">
-      <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-        <div class="h-12.5 w-15 rounded-md">
-          <img src="./images/product/product-03.png" alt="Product" />
+   <!-- Modal -->
+   <div id="employeeModal" class="hidden fixed inset-0 flex items-center lg:ml-[200px] justify-center z-50 mt-20">
+    <div class="fixed inset-0 bg-black opacity-50"></div>
+    <div class="bg-white rounded-md p-8 w-full max-w-4xl relative mx-auto">
+      <h2 class="flex text-primary text-2xl font-bold mb-10 justify-center ">Add Employee</h2>
+      <form>
+        <div class="mb-4">
+          <div class="flex justify-between mb-2 ">
+            <div class="flex-col  ">
+              <label for="idEmployee" class="block text-gray-700 text-sm font-bold mb-2">ID Employee</label>
+              <input type="number" id="idEmployee" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter id employee">
+            </div>
+            <div class="flex-col mx-2">
+              <label for="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
+              <input type="text" id="firstName" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter first name">
+            </div>
+            <div class="flex-col">
+              <label for="lastName" class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
+              <input type="text" id="lastName" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter last name">
+            </div>
+          </div>
+          <div class="flex justify-between mb-2">
+            <div class="flex-col">
+              <label for="middleInitial" class="block text-gray-700 text-sm font-bold mb-2">Middle Initial</label>
+              <input type="text" id="middleInitial" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter Middle Initial">
+            </div>
+            <div class="flex-col mx-2">
+              <label for="address1" class="block text-gray-700 text-sm font-bold mb-2">Address 1</label>
+              <input type="text" id="address1" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter address1">
+            </div>
+            <div class="flex-col">
+              <label for="address2" class="block text-gray-700 text-sm font-bold mb-2">Address 2</label>
+              <input type="text" id="address2" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter address2">
+            </div>
+          </div>
+          <div class="flex justify-between mb-2">
+            <div class="flex-col ">
+              <label for="city" class="block text-gray-700 text-sm font-bold mb-2">City</label>
+              <input type="text" id="city" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter city ">
+            </div>
+            <div class="flex-col mx-2">
+              <label for="state" class="block text-gray-700 text-sm font-bold mb-2">State</label>
+              <input type="text" id="state" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter state">
+            </div>
+            <div class="flex-col ">
+              <label for="zip" class="block text-gray-700 text-sm font-bold mb-2">Zip</label>
+              <input type="number" id="zip" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter zip ">
+              </div>  
+            </div>
+          <div class="flex justify-between mb-2">
+            <div class="flex-col">
+              <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+              <input type="email" id="email" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter email">
+            </div>
+            <div class="flex-col mx-2 ">
+              <label for="phoneNumber" class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+              <input type="number" id="phoneNumber" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter phone number ">
+            </div>
+            <div class="flex-col">
+              <label for="socialSecurityNumber" class="block text-gray-700 text-sm font-bold mb-2">Social Security Number</label>
+              <input type="number" id="socialSecurityNumber" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter socialSecurityNumber">
+            </div>
+          </div>
+          <div class="flex justify-between mb-2">
+            <div class="flex-col ">
+              <label for="driversLicense" class="block text-gray-700 text-sm font-bold mb-2">Drivers_License</label>
+              <input type="number" id="driversLicense" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter drivers license ">
+            </div>
+            <div class="flex-col mx-2">
+              <label for="maritalStatus" class="block text-gray-700 text-sm font-bold mb-2">Marital Status</label>
+              <input type="number" id="maritalStatus" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter marital status ">
+            </div>
+            <div class="flex-col ">
+              <label for="gender" class="block text-gray-700 text-sm font-bold mb-2">Gender</label>
+              <input type="number" id="gender" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter gender">
+            </div>
+           
+          </div>
+          <div class="flex justify-between mb-2">
+            <div class="flex-col ">
+              <label for="shareholderStatus" class="block text-gray-700 text-sm font-bold mb-2">Shareholder Status</label>
+              <input type="number" id="shareholderStatus" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter shareholder status ">
+            </div>
+            <div class="flex-col mx-2">
+              <label for="benefitPlans" class="block text-gray-700 text-sm font-bold mb-2">Benefit Plans</label>
+              <input type="number" id="benefitPlans" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter benefit plans">
+            </div>
+            <div class="flex-col ">
+              <label for="ethnicity" class="block text-gray-700 text-sm font-bold mb-2">Ethnicity</label>
+              <input type="text" id="ethnicity" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter ethnicity ">
+            </div>
+            
+          </div>
+          <div class="flex justify-between mb-2">
+            <div class="flex-col ">
+              <label for="employmentStatus" class="block text-gray-700 text-sm font-bold mb-2">Employment Status</label>
+              <input type="number" id="employmentStatus" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter employment status ">
+            </div>
+            <div class="flex-col mx-2 ml-10 mr-10">
+              <label for="hireDate" class="block text-gray-700 text-sm font-bold mb-2">Hire Date</label>
+              <input type="date" id="hireDate" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter hire date ">
+            </div>
+            <div class="flex-col ">
+              <label for="workersCompCode" class="block text-gray-700 text-sm font-bold mb-2">Workers Comp Code</label>
+              <input type="number" id="workersCompCode" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter workers comp code">
+            </div>
+          
+          </div>
         </div>
-        <p class="font-medium text-sm text-black dark:text-white">Dell Inspiron 15</p>
-      </div>
-    </div>
-    <div class="col-span-2 hidden items-center sm:flex">
-      <p class="font-medium text-sm text-black dark:text-white">Electronics</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-black dark:text-white">$443</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-black dark:text-white">64</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-meta-3">$247</p>
+        <div class="flex justify-between mb-2">
+          <div class="flex-col ">
+            <label for="terminationDate" class="block text-gray-700 text-sm font-bold mb-2">Termination Date</label>
+            <input type="date" id="terminationDate" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter termination date">
+          </div>
+          <div class="flex-col ml-4 ">
+            <label for="rehireDate" class="block text-gray-700 text-sm font-bold mb-2">Rehire Date</label>
+            <input type="date" id="rehireDate" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter rehire date">
+          </div>
+          <div class="flex-col">
+            <label for="lastReviewDate" class="block text-gray-700 text-sm font-bold mb-2">Last Review Date</label>
+            <input type="date" id="lastReviewDate" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter last review date">
+          </div>
+        </div>
+        <!-- Add other form fields here -->
+        <div class="flex justify-end">
+          <button id="cancelBtn" class="py-2 px-10 bg-gray-300 text-gray-700 font-bold rounded-md mr-2">Cancel</button>
+          <button id="addBtn" type="submit" class="py-2 px-10 bg-primary text-white rounded-md">Add</button>
+        </div>
+      </form>
     </div>
   </div>
-  <div
-    class="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-    <div class="col-span-3 flex items-center">
-      <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-        <div class="h-12.5 w-15 rounded-md">
-          <img src="./images/product/product-04.png" alt="Product" />
-        </div>
-        <p class="font-medium text-sm text-black dark:text-white">HP Probook 450</p>
-      </div>
-    </div>
-    <div class="col-span-2 hidden items-center sm:flex">
-      <p class="font-medium text-sm text-black dark:text-white">Electronics</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-black dark:text-white">$499</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-black dark:text-white">72</p>
-    </div>
-    <div class="col-span-1 flex items-center">
-      <p class="font-medium text-sm text-meta-3">$103</p>
-    </div>
-  </div>
+  <ul id="list-products">
+  </ul>
 </div>

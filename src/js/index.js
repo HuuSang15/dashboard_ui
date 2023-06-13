@@ -9,7 +9,11 @@ import chart01 from "./components/chart-01";
 import chart02 from "./components/chart-02";
 import chart03 from "./components/chart-03";
 import chart04 from "./components/chart-04";
-import map01 from "./components/map-01";
+import chart05 from "./components/chart-05";
+import chart06 from "./components/chart-06";
+import ListEmployees from "./components/ListEmployees";
+import AddEmployees from "./components/AddEmployees";
+
 
 Alpine.plugin(persist)
 window.Alpine = Alpine;
@@ -44,5 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   chart02();
   chart03();
   chart04();
-  map01();
+  chart05();
+  chart06();
+  ListEmployees();
 });

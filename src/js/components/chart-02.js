@@ -5,11 +5,11 @@ const chart02 = () => {
   const chartTwoOptions = {
     series: [
       {
-        name: "Sales",
+        name: "Male",
         data: [44, 55, 41, 67, 22, 43, 65],
       },
       {
-        name: "Revenue",
+        name: "Female",
         data: [13, 23, 20, 8, 13, 27, 15],
       },
     ],
