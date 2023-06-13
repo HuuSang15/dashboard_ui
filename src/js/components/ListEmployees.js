@@ -95,59 +95,60 @@ const ListEmployees = () => {
     createBtn.onclick = function (e) {
       e.preventDefault();
 
-      // // const id = document.querySelector("#idEmployee").value;
-      // // const firstName = document.querySelector("#firstName").value;
-      // // const lastName = document.querySelector("#lastName").value;
-      // // const middleInitial = document.querySelector("#middleInitial").value;
-      // // const name = `${firstName} ${middleInitial} ${lastName}`;
-      // // const address1 = document.querySelector("#address1").value;
-      // // const address2 = document.querySelector("#address2").value;
-      // // const city = document.querySelector("#city").value;
-      // // const state = document.querySelector("#state").value;
-      // // const zip = document.querySelector("#zip").value;
-      // // const email = document.querySelector("#email").value;
-      // // const phoneNumber= document.querySelector("#phoneNumber").value;
-      // // const socialSecurityNumber = document.querySelector("#socialSecurityNumber").value;
-      // // const driversLicense = document.querySelector("#driversLicense").value;
-      // // const maritalStatus = document.querySelector("#maritalStatus").value;
-      // // const gender = document.querySelector("#gender").value;
-      // // const shareholderStatus = document.querySelector("#shareholderStatus").value;
-      // // const benefitPlans = document.querySelector("#benefitPlans").value;
-      // // const ethnicity = document.querySelector("#ethnicity").value;
-      // // const employmentStatus = document.querySelector("#employmentStatus").value;
-      // const hireDate = document.querySelector("#hireDate").value;
-      // // const workersCompCode = document.querySelector("#workersCompCode").value;
-      // // const terminationDate = document.querySelector("#terminationDate").value;
-      // // const rehireDate = document.querySelector("#rehireDate").value;
-      // // const lastReviewDate = document.querySelector("#lastReviewDate").value;
+      console.log(1);
+      // const id = document.querySelector("#idEmployee").value;
+      // const firstName = document.querySelector("#firstName").value;
+      // const lastName = document.querySelector("#lastName").value;
+      // const middleInitial = document.querySelector("#middleInitial").value;
+      // const name = `${firstName} ${middleInitial} ${lastName}`;
+      // const address1 = document.querySelector("#address1").value;
+      // const address2 = document.querySelector("#address2").value;
+      // const city = document.querySelector("#city").value;
+      // const state = document.querySelector("#state").value;
+      // const zip = document.querySelector("#zip").value;
+      // const email = document.querySelector("#email").value;
+      // const phoneNumber= document.querySelector("#phoneNumber").value;
+      // const socialSecurityNumber = document.querySelector("#socialSecurityNumber").value;
+      // const driversLicense = document.querySelector("#driversLicense").value;
+      // const maritalStatus = document.querySelector("#maritalStatus").value;
+      // const gender = document.querySelector("#gender").value;
+      // const shareholderStatus = document.querySelector("#shareholderStatus").value;
+      // const benefitPlans = document.querySelector("#benefitPlans").value;
+      // const ethnicity = document.querySelector("#ethnicity").value;
+      // const employmentStatus = document.querySelector("#employmentStatus").value;
+      const hireDate = Date(document.querySelector("#hireDate").value);
+      // const workersCompCode = document.querySelector("#workersCompCode").value;
+      // const terminationDate = document.querySelector("#terminationDate").value;
+      // const rehireDate = document.querySelector("#rehireDate").value;
+      // const lastReviewDate = document.querySelector("#lastReviewDate").value;
       
-      // console.log(hireDate);
-      // // createEmployee({
-      // //   Employee_ID: id,
-      // //   First_Name: firstName,
-      // //   Last_Name: lastName,
-      // //   Middle_Initial: middleInitial,
-      // //   Address1: address1,
-      // //   Address2: address2,
-      // //   City: city,
-      // //   State: state,
-      // //   Zip: zip,
-      // //   Email: email,
-      // //   Phone_Number: phoneNumber,
-      // //   Social_Security_Number: socialSecurityNumber,
-      // //   Drivers_License: driversLicense,
-      // //   Marital_Status: maritalStatus,
-      // //   Gender: gender,
-      // //   Shareholder_Status: shareholderStatus,
-      // //   Benefit_Plans: benefitPlans,
-      // //   Ethnicity: ethnicity,
-      // //   Employment_Status:employmentStatus,
-      // //   Hire_Date:hireDate,
-      // //   Workers_Comp_Code: workersCompCode,
-      // //   Termination_Date: terminationDate,
-      // //   Rehire_Date: rehireDate,
-      // //   Last_Review_Date: lastReviewDate,
-      // // });
+      console.log(typeof hireDate);
+      // createEmployee({
+      //   Employee_ID: id,
+      //   First_Name: firstName,
+      //   Last_Name: lastName,
+      //   Middle_Initial: middleInitial,
+      //   Address1: address1,
+      //   Address2: address2,
+      //   City: city,
+      //   State: state,
+      //   Zip: zip,
+      //   Email: email,
+      //   Phone_Number: phoneNumber,
+      //   Social_Security_Number: socialSecurityNumber,
+      //   Drivers_License: driversLicense,
+      //   Marital_Status: maritalStatus,
+      //   Gender: gender,
+      //   Shareholder_Status: shareholderStatus,
+      //   Benefit_Plans: benefitPlans,
+      //   Ethnicity: ethnicity,
+      //   Employment_Status:employmentStatus,
+      //   Hire_Date:hireDate,
+      //   Workers_Comp_Code: workersCompCode,
+      //   Termination_Date: terminationDate,
+      //   Rehire_Date: rehireDate,
+      //   Last_Review_Date: lastReviewDate,
+      // });
     };
     
   }
