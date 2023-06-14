@@ -1,4 +1,4 @@
- <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+<div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
   <div class="justify-between gap-4 sm:flex">
     <div class="py-8 px-4 md:px-6 xl:px-7.5 ">
       <h4 class="text-xl font-bold text-black dark:text-white">
@@ -31,12 +31,12 @@
     <div class="col-span-1 hidden items-center sm:flex">
       <p class="font-medium">Phone</p>
     </div>
-    <div class="col-span-1 flex items-center">
+    <div class="col-span-1 flex items-center w-[130px]">
       <p class="font-medium">Benefit</p>
     </div>
   </div>
    <!-- Modal -->
-   <div id="employeeModal" class="hidden fixed inset-0 flex items-center lg:ml-[200px] justify-center z-50 mt-20">
+   <div id="employeeModal" class="hidden fixed inset-0 flex items-center lg:ml-[200px] justify-center z-50 mt-30">
     <div class="fixed inset-0 bg-black opacity-50"></div>
     <div class="bg-white rounded-md p-8 w-full max-w-4xl relative mx-auto">
       <h2 class="flex text-primary text-2xl font-bold mb-10 justify-center ">Add Employee</h2>
@@ -44,8 +44,8 @@
         <div class="mb-4">
           <div class="flex justify-between mb-2 ">
             <div class="flex-col  ">
-              <label for="idEmployee" class="block text-gray-700 text-sm font-bold mb-2">ID Employee</label>
-              <input type="number" id="idEmployee" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter id employee">
+              <label for="employeeId" class="block text-gray-700 text-sm font-bold mb-2">ID Employee</label>
+              <input type="number" id="employeeId" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter id employee">
             </div>
             <div class="flex-col mx-2">
               <label for="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
@@ -95,7 +95,7 @@
             </div>
             <div class="flex-col">
               <label for="socialSecurityNumber" class="block text-gray-700 text-sm font-bold mb-2">Social Security Number</label>
-              <input type="number" id="socialSecurityNumber" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter socialSecurityNumber">
+              <input type="number" id="socialSecurityNumber" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter socialSecurity number">
             </div>
           </div>
           <div class="flex justify-between mb-2">
@@ -104,52 +104,68 @@
               <input type="number" id="driversLicense" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter drivers license ">
             </div>
             <div class="flex-col mx-2">
-              <label for="maritalStatus" class="block text-gray-700 text-sm font-bold mb-2">Marital Status</label>
-              <input type="number" id="maritalStatus" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter marital status ">
-            </div>
-            <div class="flex-col ">
-              <label for="gender" class="block text-gray-700 text-sm font-bold mb-2">Gender</label>
-              <input type="number" id="gender" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter gender">
-            </div>
-           
-          </div>
-          <div class="flex justify-between mb-2">
-            <div class="flex-col ">
-              <label for="shareholderStatus" class="block text-gray-700 text-sm font-bold mb-2">Shareholder Status</label>
-              <input type="number" id="shareholderStatus" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter shareholder status ">
-            </div>
-            <div class="flex-col mx-2">
-              <label for="benefitPlans" class="block text-gray-700 text-sm font-bold mb-2">Benefit Plans</label>
-              <input type="number" id="benefitPlans" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter benefit plans">
-            </div>
-            <div class="flex-col ">
               <label for="ethnicity" class="block text-gray-700 text-sm font-bold mb-2">Ethnicity</label>
               <input type="text" id="ethnicity" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter ethnicity ">
-            </div>
-            
-          </div>
-          <div class="flex justify-between mb-2">
-            <div class="flex-col ">
-              <label for="employmentStatus" class="block text-gray-700 text-sm font-bold mb-2">Employment Status</label>
-              <input type="number" id="employmentStatus" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter employment status ">
-            </div>
-            <div class="flex-col mx-2 ml-10 mr-10">
-              <label for="hireDate" class="block text-gray-700 text-sm font-bold mb-2">Hire Date</label>
-              <input type="date" id="hireDate" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter hire date ">
             </div>
             <div class="flex-col ">
               <label for="workersCompCode" class="block text-gray-700 text-sm font-bold mb-2">Workers Comp Code</label>
               <input type="number" id="workersCompCode" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter workers comp code">
             </div>
-          
+           
+          </div>
+          <div class="flex justify-between mb-2">
+            <div class="flex-col">
+              <label for="maritalStatus" class="block text-gray-700 text-sm font-bold mb-2">Marital Status</label>
+              <select id="maritalStatus" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="flex-col ">
+              <label for="shareholderStatus" class="block text-gray-700 text-sm font-bold mb-2">Shareholder Status</label>
+              <select id="shareholderStatus" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            
+            <div class="flex-col ">
+              <label for="employmentStatus" class="block text-gray-700 text-sm font-bold mb-2">Employment Status</label>
+              <select id="employmentStatus" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex justify-between mb-2">
+            <div class="flex-col">
+              <label for="benefitPlans" class="block text-gray-700 text-sm font-bold mb-2">Benefit Plans</label>
+              <select id="benefitPlans" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                <option value="1">Shareholder</option>
+                <option value="2">Manager</option>
+                <option value="3">Staff</option>
+              </select>
+            </div>
+           
+            <div class="flex-col ml-6">
+              <label for="gender" class="block text-gray-700 text-sm font-bold mb-2">Gender</label>
+              <select id="gender" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+            </div>
+            <div class="flex-col">
+              <label for="terminationDate" class="block text-gray-700 text-sm font-bold mb-2">Termination Date</label>
+              <input type="date" id="terminationDate" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter termination date">
+            </div>
           </div>
         </div>
         <div class="flex justify-between mb-2">
           <div class="flex-col ">
-            <label for="terminationDate" class="block text-gray-700 text-sm font-bold mb-2">Termination Date</label>
-            <input type="date" id="terminationDate" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter termination date">
+            <label for="hireDate" class="block text-gray-700 text-sm font-bold mb-2">Hire Date</label>
+            <input type="date" id="hireDate" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter hire date ">
           </div>
-          <div class="flex-col ml-4 ">
+          <div class="flex-col">
             <label for="rehireDate" class="block text-gray-700 text-sm font-bold mb-2">Rehire Date</label>
             <input type="date" id="rehireDate" class="px-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter rehire date">
           </div>
@@ -159,7 +175,7 @@
           </div>
         </div>
         <!-- Add other form fields here -->
-        <div class="flex justify-end">
+        <div class="flex justify-end mt-8">
           <button id="cancelBtn" class="py-2 px-10 bg-gray-300 text-gray-700 font-bold rounded-md mr-2">Cancel</button>
           <button id="addBtn" type="submit" class="py-2 px-10 bg-primary text-white rounded-md">Add</button>
         </div>

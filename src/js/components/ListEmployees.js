@@ -12,11 +12,13 @@ const ListEmployees = () => {
         renderEmployees(data);
       })
       .catch((error) => {
-        console.log("lỗi");
         console.log(error);
       });
     handleCreateEmployee();
-    // handelRemoveEmployee();
+    setTimeout(() => {
+      handelDeleteEmployee();
+  
+    }, 1000);
   }
   start();
 
@@ -57,15 +59,15 @@ const ListEmployees = () => {
                   employee.Phone_Number
                 }</p>
               </div>
-              <div class="col-span-1 flex items-center">
-                <p class="font-medium text-sm text-meta-3 lg:ml-6">${
-                  employee.Benefit_Plans
+              <div class="col-span-1 flex items-center ">
+                <p class="font-medium text-sm text-meta-3 pr-10 w-[130px]">${
+                  benefitPlans(employee.Benefit_Plans)
                 }</p>
-                <button id="btn-edit" class="hover:text-primary lg:ml-16" >
+                <button id="btn-edit" data-employee-id="${employee.Employee_ID}" class="hover:text-primary" >
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 512 512">
                   <path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
                 </button>
-                <button onclick="handelDeleteEmployee(${employee.Employee_ID})" class="hover:text-primary ml-3">
+                <button id="btn-delete" data-employee-id="${ employee.Employee_ID}" class="hover:text-primary ml-3">
                 <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -91,70 +93,67 @@ const ListEmployees = () => {
   // handle create Employee
   function handleCreateEmployee() {
     var createBtn = document.querySelector("#addBtn");
-
     createBtn.onclick = function (e) {
       e.preventDefault();
+      const id = document.querySelector("#employeeId").value;
+      const firstName = document.querySelector("#firstName").value;
+      const lastName = document.querySelector("#lastName").value;
+      const middleInitial = document.querySelector("#middleInitial").value;
+      const address1 = document.querySelector("#address1").value;
+      const address2 = document.querySelector("#address2").value;
+      const city = document.querySelector("#city").value;
+      const state = document.querySelector("#state").value;
+      const zip = document.querySelector("#zip").value;
+      const email = document.querySelector("#email").value;
+      const phoneNumber = document.querySelector("#phoneNumber").value;
+      const socialSecurityNumber = document.querySelector("#socialSecurityNumber").value;
+      const driversLicense = document.querySelector("#driversLicense").value;
+      const maritalStatus = document.querySelector("#maritalStatus").value;
+      const gender = document.querySelector("#gender").value;
+      const shareholderStatus = document.querySelector("#shareholderStatus").value;
+      const benefitPlans = document.querySelector("#benefitPlans").value;
+      const ethnicity = document.querySelector("#ethnicity").value;
+      const employmentStatus = document.querySelector("#employmentStatus").value;
+      const hireDate = new Date(document.querySelector("#hireDate").value).toLocaleDateString("en-GB");
+      const workersCompCode = document.querySelector("#workersCompCode").value;
+      const terminationDate = new Date(document.querySelector("#terminationDate").value).toLocaleDateString("en-GB"); 
+      const rehireDate = new Date(document.querySelector("#rehireDate").value).toLocaleDateString("en-GB"); 
+      const lastReviewDate = new Date(document.querySelector("#lastReviewDate").value).toLocaleDateString("en-GB");
 
-      console.log(1);
-      // const id = document.querySelector("#idEmployee").value;
-      // const firstName = document.querySelector("#firstName").value;
-      // const lastName = document.querySelector("#lastName").value;
-      // const middleInitial = document.querySelector("#middleInitial").value;
-      // const name = `${firstName} ${middleInitial} ${lastName}`;
-      // const address1 = document.querySelector("#address1").value;
-      // const address2 = document.querySelector("#address2").value;
-      // const city = document.querySelector("#city").value;
-      // const state = document.querySelector("#state").value;
-      // const zip = document.querySelector("#zip").value;
-      // const email = document.querySelector("#email").value;
-      // const phoneNumber= document.querySelector("#phoneNumber").value;
-      // const socialSecurityNumber = document.querySelector("#socialSecurityNumber").value;
-      // const driversLicense = document.querySelector("#driversLicense").value;
-      // const maritalStatus = document.querySelector("#maritalStatus").value;
-      // const gender = document.querySelector("#gender").value;
-      // const shareholderStatus = document.querySelector("#shareholderStatus").value;
-      // const benefitPlans = document.querySelector("#benefitPlans").value;
-      // const ethnicity = document.querySelector("#ethnicity").value;
-      // const employmentStatus = document.querySelector("#employmentStatus").value;
-      const hireDate = Date(document.querySelector("#hireDate").value);
-      // const workersCompCode = document.querySelector("#workersCompCode").value;
-      // const terminationDate = document.querySelector("#terminationDate").value;
-      // const rehireDate = document.querySelector("#rehireDate").value;
-      // const lastReviewDate = document.querySelector("#lastReviewDate").value;
+      const employeeData = {
+        Employee_ID: id,
+        First_Name: firstName,
+        Last_Name: lastName,
+        Middle_Initial: middleInitial,
+        Address1: address1,
+        Address2: address2,
+        City: city,
+        State: state,
+        Zip: zip,
+        Email: email,
+        Phone_Number: phoneNumber,
+        Social_Security_Number: socialSecurityNumber,
+        Drivers_License: driversLicense,
+        Marital_Status: maritalStatus,
+        Gender: gender,
+        Shareholder_Status: shareholderStatus,
+        Benefit_Plans: benefitPlans,
+        Ethnicity: ethnicity,
+        Employment_Status: employmentStatus,
+        Hire_Date: hireDate,
+        Workers_Comp_Code: workersCompCode,
+        Termination_Date: terminationDate,
+        Rehire_Date: rehireDate,
+        Last_Review_Date: lastReviewDate,
+      };
+      console.log(employeeData);
+      createEmployee(employeeData);
       
-      console.log(typeof hireDate);
-      // createEmployee({
-      //   Employee_ID: id,
-      //   First_Name: firstName,
-      //   Last_Name: lastName,
-      //   Middle_Initial: middleInitial,
-      //   Address1: address1,
-      //   Address2: address2,
-      //   City: city,
-      //   State: state,
-      //   Zip: zip,
-      //   Email: email,
-      //   Phone_Number: phoneNumber,
-      //   Social_Security_Number: socialSecurityNumber,
-      //   Drivers_License: driversLicense,
-      //   Marital_Status: maritalStatus,
-      //   Gender: gender,
-      //   Shareholder_Status: shareholderStatus,
-      //   Benefit_Plans: benefitPlans,
-      //   Ethnicity: ethnicity,
-      //   Employment_Status:employmentStatus,
-      //   Hire_Date:hireDate,
-      //   Workers_Comp_Code: workersCompCode,
-      //   Termination_Date: terminationDate,
-      //   Rehire_Date: rehireDate,
-      //   Last_Review_Date: lastReviewDate,
-      // });
     };
-    
   }
   
   function createEmployee(data) {
-  const addEmployeeUrl = "http://localhost:5000/api/hr/add-employee";
+    const addEmployeeUrl = "http://localhost:5000/api/hr/add-employee";
     fetch(addEmployeeUrl, {
       method: 'POST',
       body: JSON.stringify(data),
@@ -162,25 +161,54 @@ const ListEmployees = () => {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => response.json())
-      .then((data) => alert("Success!", data))
-      .catch((error) => console.log(error));
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Failed to add employee. Please try again.");
+        }
+      })
+      .then((data) => {
+        alert("Success Add Employee!", data);
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Failed to add employee. Please try again.");
+      });
   }
+  
+  
+  
+  function handelDeleteEmployee() {
+    var btnDeletes = document.querySelectorAll("#btn-delete");
 
-    function handelRemoveEmployee(Employee_ID) {
-      fetch(`${urlEmployee}/${Employee_ID}`, {
-          method: "DELETE",
-      }).then((response) => {
-          if (response.ok) {
-              alert("Đã xóa thành công!")
-          } else {
-              alert("Lỗi khi xóa đối tượng!")
-          }
-      }).catch((error) => {
-          alert("Lỗi khi gửi yêu cầu xóa đối tượng:", error);
+    btnDeletes.forEach((btnDelete) => {
+      btnDelete.addEventListener("click", function (event) {
+        const employeeId = parseInt(this.getAttribute("data-employee-id"));
+        removeEmployee(employeeId);
+      });
+    });
+  }
+  function removeEmployee(idEmployee) {
+    const urlProduct = "http://localhost:5000/api/hr/delete-employee";
+    fetch(`${urlProduct}/${idEmployee}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        console.log(response);
+        location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 
+function benefitPlans(num) {
+   if(num === 1) return "Shareholder"
+   else if(num === 2) return "Manager"
+   else if(num === 3) return "Staff"
+   else return "null";
+}
   const addEmployeeBtn = document.getElementById("addEmployeeBtn");
   const cancelBtn = document.getElementById("cancelBtn");
   const employeeModal = document.getElementById("employeeModal");
