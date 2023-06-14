@@ -202,23 +202,24 @@ const ListEmployees = () => {
         console.log(error);
       });
   }
-
 function benefitPlans(num) {
    if(num === 1) return "Shareholder"
    else if(num === 2) return "Manager"
    else if(num === 3) return "Staff"
    else return "null";
 }
+
   const addEmployeeBtn = document.getElementById("addEmployeeBtn");
   const cancelBtn = document.getElementById("cancelBtn");
   const employeeModal = document.getElementById("employeeModal");
 
   addEmployeeBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevent click event from propagating to the modal overlay
+    e.stopPropagation(); 
     employeeModal.classList.remove("hidden");
   });
 
-  cancelBtn.addEventListener("click", () => {
+  cancelBtn.addEventListener("click", (even) => {
+    event.preventDefault();
     employeeModal.classList.add("hidden");
   });
 };
